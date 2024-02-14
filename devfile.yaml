@@ -6,7 +6,7 @@ attributes:
 components:
   - name: python
     container:
-      image: quay.io/devspaces/udi-rhel8:latest
+      image: quay.io/devspaces/udi-rhel8:3.11
       memoryRequest: 1Gi
       memoryLimit: 8Gi
       cpuLimit: '4'
