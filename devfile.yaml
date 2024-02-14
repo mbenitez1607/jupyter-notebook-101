@@ -1,13 +1,19 @@
 schemaVersion: 2.2.0
 metadata:
   generateName: jupyter-notebook-101
-attributes:
-  controller.devfile.io/storage-type: ephemeral
 components:
   - name: python
     container:
       image: quay.io/devspaces/udi-rhel8:3.11
-      memoryRequest: 1Gi
-      memoryLimit: 8Gi
-      cpuLimit: '4'
+      volumeMounts:
+        - name: venv
+          path: /home/user/.venv
+      memoryLimit: '2Gi'
+      memoryRequest: '1Gi'
+      cpuLimit: '2'
       cpuRequest: '1'
+      mountSources: true
+  - name: venv
+    volume:
+      size: 1G
+
