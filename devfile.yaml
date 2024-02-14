@@ -1,0 +1,13 @@
+schemaVersion: 2.2.0
+metadata:
+  generateName: jupyter-notebook-101
+attributes:
+  controller.devfile.io/storage-type: ephemeral
+components:
+  - name: python
+    container:
+      image: quay.io/devspaces/udi-rhel8:latest
+      memoryRequest: 1Gi
+      memoryLimit: 8Gi
+      cpuLimit: '4'
+      cpuRequest: '1'
